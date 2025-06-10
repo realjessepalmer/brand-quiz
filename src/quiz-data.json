@@ -1,0 +1,332 @@
+{
+  "archetypes": [
+    {
+      "id": "hero",
+      "name": "Hero",
+      "description": "The Hero brand archetype embodies courage, determination, and a drive to make a positive impact. Heroes are motivated by mastery and making the world better through their strength and fortitude.",
+      "traits": ["Courageous", "Determined", "Inspiring", "Powerful", "Impactful"],
+      "examples": ["Nike", "FedEx", "Amazon", "U.S. Army"],
+      "color": "#e63946"
+    },
+    {
+      "id": "lover",
+      "name": "Lover",
+      "description": "The Lover brand archetype emphasizes emotional connections, intimacy, and beauty. Lovers are motivated by passion and desire to create close relationships and sensory experiences.",
+      "traits": ["Passionate", "Intimate", "Sensual", "Empathetic", "Harmonious"],
+      "examples": ["Victoria Secret", "Godiva", "Chanel", "Haagen-Dazs"],
+      "color": "#e76f51"
+    },
+    {
+      "id": "creator",
+      "name": "Creator",
+      "description": "The Creator brand archetype values innovation, self-expression, and imagination. Creators are motivated by the desire to produce exceptional and enduring works that express something meaningful.",
+      "traits": ["Innovative", "Visionary", "Artistic", "Expressive", "Original"],
+      "examples": ["Apple", "Adobe", "LEGO", "Pinterest"],
+      "color": "#f4a261"
+    },
+    {
+      "id": "caregiver",
+      "name": "Caregiver",
+      "description": "The Caregiver brand archetype embodies nurturing, compassion, and support. Caregivers are motivated by altruism and the desire to protect and care for others.",
+      "traits": ["Nurturing", "Supportive", "Compassionate", "Generous", "Selfless"],
+      "examples": ["Johnson & Johnson", "UNICEF", "Volvo", "Campbell Soup"],
+      "color": "#2a9d8f"
+    },
+    {
+      "id": "outlaw",
+      "name": "Outlaw",
+      "description": "The Outlaw brand archetype challenges conventions, values freedom, and disrupts the status quo. Outlaws are motivated by revolution and the desire to transform what is not working.",
+      "traits": ["Rebellious", "Disruptive", "Liberating", "Radical", "Bold"],
+      "examples": ["Harley-Davidson", "Virgin", "Diesel", "Red Bull"],
+      "color": "#264653"
+    },
+    {
+      "id": "ruler",
+      "name": "Ruler",
+      "description": "The Ruler brand archetype embodies control, leadership, and prestige. Rulers are motivated by stability and creating order from chaos to build a prosperous, successful community or business.",
+      "traits": ["Authoritative", "Influential", "Prestigious", "Organized", "Commanding"],
+      "examples": ["Mercedes-Benz", "Microsoft", "Rolex", "British Airways"],
+      "color": "#9c89b8"
+    },
+    {
+      "id": "explorer",
+      "name": "Explorer",
+      "description": "The Explorer brand archetype values freedom, adventure, and new experiences. Explorers are motivated by a desire for discovery, authenticity, and breaking free from constraints.",
+      "traits": ["Adventurous", "Independent", "Pioneering", "Authentic", "Curious"],
+      "examples": ["Jeep", "The North Face", "National Geographic", "REI"],
+      "color": "#f9c74f"
+    },
+    {
+      "id": "sage",
+      "name": "Sage",
+      "description": "The Sage brand archetype values knowledge, wisdom, and truth. Sages are motivated by understanding the world through analysis, research, and thinking, emphasizing expertise and intelligence.",
+      "traits": ["Knowledgeable", "Wise", "Analytical", "Informative", "Thoughtful"],
+      "examples": ["Google", "BBC", "Harvard University", "TED"],
+      "color": "#277da1"
+    },
+    {
+      "id": "jester",
+      "name": "Jester",
+      "description": "The Jester brand archetype embodies fun, humor, and spontaneity. Jesters are motivated by enjoyment of the moment and bringing levity to every situation.",
+      "traits": ["Playful", "Humorous", "Entertaining", "Spontaneous", "Optimistic"],
+      "examples": ["Old Spice", "Dollar Shave Club", "Ben & Jerrys", "M&Ms"],
+      "color": "#f15bb5"
+    },
+    {
+      "id": "innocent",
+      "name": "Innocent",
+      "description": "The Innocent brand archetype values simplicity, purity, and optimism. Innocents are motivated by happiness and the desire to create a better, simpler world where goodness prevails.",
+      "traits": ["Pure", "Honest", "Optimistic", "Authentic", "Simple"],
+      "examples": ["Coca-Cola", "Dove", "Whole Foods", "Disney"],
+      "color": "#9ee493"
+    },
+    {
+      "id": "everyman",
+      "name": "Everyman",
+      "description": "The Everyman brand archetype values belonging, community, and practicality. Everymen are motivated by connection with others and creating products and services that work for everyone.",
+      "traits": ["Relatable", "Approachable", "Authentic", "Friendly", "Practical"],
+      "examples": ["IKEA", "Target", "Budweiser", "Gap"],
+      "color": "#f9844a"
+    },
+    {
+      "id": "magician",
+      "name": "Magician",
+      "description": "The Magician brand archetype values transformation, imagination, and creating extraordinary experiences. Magicians are motivated by developing vision and manifesting dreams into reality.",
+      "traits": ["Transformative", "Visionary", "Inspiring", "Charismatic", "Mystical"],
+      "examples": ["Disney", "Mastercard", "Tesla", "Dyson"],
+      "color": "#4361ee"
+    }
+  ],
+  "quizQuestions": [
+    {
+      "id": "q1",
+      "text": "Drag the values that matter to your brand ABOVE the line. Rank them in order of importance.",
+      "type": "rankWithCutoff",
+      "instructions": "Only drag values that are important to your brand above the line. You can leave some below.",
+      "scoring": {
+        "aboveLine": "descending",
+        "belowLine": 0
+      },
+      "options": [
+        { "text": "Courage & Achievement", "archetype": "hero" },
+        { "text": "Beauty & Connection", "archetype": "lover" },
+        { "text": "Innovation & Imagination", "archetype": "creator" },
+        { "text": "Care & Support", "archetype": "caregiver" },
+        { "text": "Freedom & Disruption", "archetype": "outlaw" },
+        { "text": "Control & Leadership", "archetype": "ruler" },
+        { "text": "Discovery & Adventure", "archetype": "explorer" },
+        { "text": "Wisdom & Understanding", "archetype": "sage" },
+        { "text": "Joy & Entertainment", "archetype": "jester" },
+        { "text": "Simplicity & Trust", "archetype": "innocent" },
+        { "text": "Belonging & Accessibility", "archetype": "everyman" },
+        { "text": "Transformation & Vision", "archetype": "magician" }
+      ]
+    },
+    {
+      "id": "q2",
+      "text": "For each pair, choose the approach that better fits your brand:",
+      "type": "binary",
+      "scoring": {
+        "selected": 3,
+        "unselected": 0
+      },
+      "pairs": [
+        {
+          "optionA": {
+            "text": "We make people feel powerful and unstoppable",
+            "archetypes": ["hero", "magician"]
+          },
+          "optionB": {
+            "text": "We make people feel comforted and cared for",
+            "archetypes": ["caregiver", "innocent"]
+          }
+        },
+        {
+          "optionA": {
+            "text": "We break all the rules",
+            "archetypes": ["outlaw", "jester"]
+          },
+          "optionB": {
+            "text": "We set the standard others follow",
+            "archetypes": ["ruler", "sage"]
+          }
+        },
+        {
+          "optionA": {
+            "text": "We spark joy and laughter",
+            "archetypes": ["jester", "innocent"]
+          },
+          "optionB": {
+            "text": "We provide wisdom and expertise",
+            "archetypes": ["sage", "ruler"]
+          }
+        },
+        {
+          "optionA": {
+            "text": "We create exclusive, premium experiences",
+            "archetypes": ["ruler", "lover"]
+          },
+          "optionB": {
+            "text": "We're accessible to everyone",
+            "archetypes": ["everyman", "caregiver"]
+          }
+        },
+        {
+          "optionA": {
+            "text": "We focus on authentic simplicity",
+            "archetypes": ["innocent", "everyman"]
+          },
+          "optionB": {
+            "text": "We embrace complex transformation",
+            "archetypes": ["magician", "creator"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "q3",
+      "text": "Select the statement that BEST represents your brand:",
+      "type": "singleChoice",
+      "scoring": {
+        "pointsPerArchetype": 2.67
+      },
+      "options": [
+        {
+          "text": "We empower people to overcome challenges and achieve greatness",
+          "archetypes": ["hero", "explorer", "magician"]
+        },
+        {
+          "text": "We create meaningful connections and experiences",
+          "archetypes": ["lover", "caregiver", "innocent"]
+        },
+        {
+          "text": "We innovate and express unique perspectives",
+          "archetypes": ["creator", "outlaw", "jester"]
+        },
+        {
+          "text": "We provide structure, knowledge, and reliability",
+          "archetypes": ["ruler", "sage", "everyman"]
+        }
+      ]
+    },
+    {
+      "id": "q4",
+      "text": "Which of these behaviors does your brand regularly demonstrate? Select all that apply:",
+      "type": "multiSelect",
+      "scoring": {
+        "pointsPerSelection": 2
+      },
+      "options": [
+        { "text": "Champions causes and fights for what's right", "archetype": "hero" },
+        { "text": "Creates intimate, personalized experiences", "archetype": "lover" },
+        { "text": "Pushes creative boundaries", "archetype": "creator" },
+        { "text": "Nurtures and protects customers", "archetype": "caregiver" },
+        { "text": "Challenges industry conventions", "archetype": "outlaw" },
+        { "text": "Sets premium standards", "archetype": "ruler" },
+        { "text": "Encourages exploration and discovery", "archetype": "explorer" },
+        { "text": "Shares knowledge and insights", "archetype": "sage" },
+        { "text": "Uses humor and playfulness", "archetype": "jester" },
+        { "text": "Maintains honest, transparent communication", "archetype": "innocent" },
+        { "text": "Speaks in everyday, relatable language", "archetype": "everyman" },
+        { "text": "Creates 'wow' moments of transformation", "archetype": "magician" }
+      ]
+    },
+    {
+      "id": "q5",
+      "text": "Select the 3 descriptions that are LEAST like your brand:",
+      "type": "negativeSelect",
+      "requiredSelections": 3,
+      "scoring": {
+        "pointsPerSelection": -5
+      },
+      "options": [
+        { "text": "Aggressive competitor", "archetype": "hero" },
+        { "text": "Overly sentimental", "archetype": "lover" },
+        { "text": "Chaotic creative", "archetype": "creator" },
+        { "text": "Overprotective parent", "archetype": "caregiver" },
+        { "text": "Reckless rebel", "archetype": "outlaw" },
+        { "text": "Controlling authority", "archetype": "ruler" },
+        { "text": "Aimless wanderer", "archetype": "explorer" },
+        { "text": "Preachy know-it-all", "archetype": "sage" },
+        { "text": "Class clown", "archetype": "jester" },
+        { "text": "Naive optimist", "archetype": "innocent" },
+        { "text": "Boring conformist", "archetype": "everyman" },
+        { "text": "Manipulative illusionist", "archetype": "magician" }
+      ]
+    },
+    {
+      "id": "q6",
+      "text": "How does your brand change your customers' lives? Choose the most important:",
+      "type": "singleChoice",
+      "scoring": {
+        "pointsPerSelection": 6
+      },
+      "options": [
+        { "text": "From powerless to empowered", "archetype": "hero" },
+        { "text": "From disconnected to loved", "archetype": "lover" },
+        { "text": "From uninspired to creative", "archetype": "creator" },
+        { "text": "From neglected to nurtured", "archetype": "caregiver" },
+        { "text": "From constrained to free", "archetype": "outlaw" },
+        { "text": "From chaos to control", "archetype": "ruler" },
+        { "text": "From stuck to adventurous", "archetype": "explorer" },
+        { "text": "From confused to enlightened", "archetype": "sage" },
+        { "text": "From stressed to joyful", "archetype": "jester" },
+        { "text": "From cynical to hopeful", "archetype": "innocent" },
+        { "text": "From excluded to included", "archetype": "everyman" },
+        { "text": "From ordinary to extraordinary", "archetype": "magician" }
+      ]
+    },
+    {
+      "id": "q7",
+      "text": "Rate how strongly these describe your brand's voice:",
+      "type": "dynamicMatrix",
+      "displayCount": 6,
+      "selectionLogic": "topScoringArchetypes",
+      "scale": {
+        "min": 1,
+        "max": 5,
+        "minLabel": "Never",
+        "maxLabel": "Always"
+      },
+      "options": [
+        { "text": "Bold & Motivating", "archetype": "hero" },
+        { "text": "Warm & Intimate", "archetype": "lover" },
+        { "text": "Original & Artistic", "archetype": "creator" },
+        { "text": "Supportive & Gentle", "archetype": "caregiver" },
+        { "text": "Rebellious & Provocative", "archetype": "outlaw" },
+        { "text": "Commanding & Prestigious", "archetype": "ruler" },
+        { "text": "Curious & Adventurous", "archetype": "explorer" },
+        { "text": "Informative & Educational", "archetype": "sage" },
+        { "text": "Witty & Entertaining", "archetype": "jester" },
+        { "text": "Sincere & Optimistic", "archetype": "innocent" },
+        { "text": "Conversational & Friendly", "archetype": "everyman" },
+        { "text": "Inspiring & Visionary", "archetype": "magician" }
+      ]
+    }
+  ],
+  "scoringConfig": {
+    "algorithm": {
+      "minThreshold": 10,
+      "singleDominanceRatio": 0.50,
+      "dualInclusionRatio": 0.65,
+      "tripleInclusionRatio": 0.45
+    },
+    "resultDisplay": {
+      "single": {
+        "minPercentage": 100,
+        "label": "Your Dominant Brand Archetype"
+      },
+      "dual": {
+        "primaryMinPercentage": 55,
+        "secondaryMinPercentage": 45,
+        "label": "Your Brand Archetype Blend"
+      },
+      "triple": {
+        "primaryMinPercentage": 40,
+        "secondaryMinPercentage": 35,
+        "tertiaryMinPercentage": 25,
+        "label": "Your Brand Archetype Mix"
+      }
+    }
+  }
+}
