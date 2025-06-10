@@ -7,6 +7,7 @@ interface Question7Props {
   question: {
     id: string;
     text: string;
+    instructions?: string;
     options: QuizOption[];
     displayCount: number;
     scale: {

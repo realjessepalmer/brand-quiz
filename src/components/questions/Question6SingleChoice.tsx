@@ -6,6 +6,7 @@ interface Question6Props {
   question: {
     id: string;
     text: string;
+    instructions?: string;
     options: QuizOption[];
   };
 }

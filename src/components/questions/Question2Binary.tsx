@@ -6,6 +6,7 @@ interface Question2Props {
   question: {
     id: string;
     text: string;
+    instructions?: string;
     pairs: BinaryPair[];
   };
 }
