@@ -23,20 +23,25 @@ export function SortableItem({ id, text, rank, onClick }: SortableItemProps) {
     transition,
   };
 
+  const handleClick = (e: React.MouseEvent) => {
+    // Prevent click when dragging
+    if (!isDragging && onClick) {
+      onClick(id);
+    }
+  };
+
   return (
     <div
       ref={setNodeRef}
       style={style}
       className={`draggable-item ${isDragging ? 'dragging' : ''}`}
       {...attributes}
-      {...listeners}
-      onClick={() => onClick?.(id)}
-      title="Click to move between zones or drag to reorder"
+      title="Tap to remove or use handle to drag"
       data-testid={`sortable-item-${id}`}
     >
       {rank && <span className="rank-number">{rank}</span>}
-      <span className="item-text">{text}</span>
-      <div className="drag-handle" aria-hidden="true">
+      <span className="item-text" onClick={handleClick}>{text}</span>
+      <div className="drag-handle" {...listeners} aria-label="Drag to reorder">
         <span className="drag-dots">⋮⋮</span>
       </div>
     </div>

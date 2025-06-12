@@ -112,8 +112,9 @@ export function Question1RankWithCutoff({ question }: Question1Props) {
     }),
     useSensor(TouchSensor, {
       activationConstraint: {
-        delay: 250,
+        delay: 100,
         tolerance: 5,
+        distance: 8,
       },
     }),
     useSensor(KeyboardSensor, {
@@ -235,7 +236,7 @@ export function Question1RankWithCutoff({ question }: Question1Props) {
                   ))}
                   {aboveTheLine.length === 0 && (
                     <div className="empty-zone">
-                      Tap values above to add them here, then drag to rank
+                      Tap values above to add them here, then use the handle (⋮⋮) to drag and rank
                     </div>
                   )}
                 </div>

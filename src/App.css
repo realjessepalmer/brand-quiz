@@ -816,7 +816,8 @@
   font-size: 0.8rem;
   text-transform: uppercase;
   letter-spacing: 0.3px;
-  touch-action: manipulation;
+  touch-action: none;
+  position: relative;
 }
 
 .clickable-item {
@@ -860,18 +861,26 @@
 .drag-handle {
   display: flex;
   align-items: center;
-  opacity: 0.5;
+  justify-content: center;
+  opacity: 0.7;
   transition: opacity 0.2s ease;
   cursor: grab;
+  padding: 8px;
+  margin: -8px -8px -8px 0;
+  touch-action: none;
+  background: rgba(254, 103, 98, 0.1);
+  border-left: 2px solid #FE6762;
 }
 
-.draggable-item:hover .drag-handle {
+.draggable-item:hover .drag-handle,
+.draggable-item:active .drag-handle {
   opacity: 1;
+  background: rgba(254, 103, 98, 0.2);
 }
 
 .drag-dots {
-  font-size: 1rem;
-  color: #272727;
+  font-size: 1.2rem;
+  color: #FE6762;
   font-weight: bold;
   letter-spacing: -2px;
 }
@@ -2092,6 +2101,22 @@ fieldset {
   
   .ranking-zones.two-column .zone {
     min-height: 200px;
+  }
+  
+  /* Mobile drag handle improvements */
+  .drag-handle {
+    min-width: 44px;
+    opacity: 1;
+    background: rgba(254, 103, 98, 0.15);
+  }
+  
+  .draggable-item {
+    min-height: 48px;
+  }
+  
+  .item-text {
+    flex: 1;
+    padding-right: 0.5rem;
   }
   
   .binary-pair {
