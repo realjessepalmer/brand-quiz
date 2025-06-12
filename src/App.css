@@ -1175,7 +1175,9 @@
 
 .binary-option.selected {
   border-color: #FE6762;
-  background: white;
+  background: #ffebee;
+  border-width: 2px;
+  transform: translateY(-2px);
 }
 
 .option-content {
@@ -1277,7 +1279,9 @@ fieldset {
 .checkbox-option.selected,
 .transformation-option.selected {
   border-color: #FE6762;
-  background: white;
+  background: #ffebee;
+  border-width: 2px;
+  transform: translateY(-2px);
 }
 
 .radio-indicator,
@@ -1512,6 +1516,8 @@ fieldset {
   border-color: #FE6762;
   background: #FE6762;
   color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 2px 4px rgba(254, 103, 98, 0.3);
 }
 
 .completion-indicator {
@@ -2227,10 +2233,18 @@ fieldset {
     width: 100%;
   }
   
+  .binary-option.option-a {
+    order: 1;
+  }
+  
   .vs-divider {
     align-self: center;
-    order: 1;
+    order: 2;
     margin: 0.5rem 0;
+  }
+  
+  .binary-option.option-b {
+    order: 3;
   }
   
   .binary-option {
