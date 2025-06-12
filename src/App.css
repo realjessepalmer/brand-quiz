@@ -247,6 +247,25 @@
   border: 1px solid #FE6762;
 }
 
+.step-guidance {
+  background: linear-gradient(135deg, #FE6762 0%, #FF8A85 100%);
+  color: white;
+  padding: 0.75rem;
+  margin: 1rem 0;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.step-guidance p {
+  margin: 0.25rem 0;
+  font-size: 0.8rem;
+  line-height: 1.3;
+}
+
+.step-guidance strong {
+  font-weight: 600;
+}
+
 .question-footer {
   margin-top: 2rem;
   padding: 1rem 0;
@@ -720,6 +739,60 @@
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.3s ease;
+}
+
+.scroll-indicator.enhanced {
+  background: linear-gradient(to bottom, rgba(254, 103, 98, 0.9), rgba(254, 103, 98, 1));
+  color: white;
+  font-weight: 600;
+  padding: 1.25rem;
+  font-size: 1rem;
+}
+
+.step2-reminder {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  pointer-events: none;
+}
+
+.reminder-content {
+  background: linear-gradient(135deg, #FF4444 0%, #FF6B6B 100%);
+  color: white;
+  padding: 1.5rem 2rem;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 8px 32px rgba(255, 68, 68, 0.4);
+  border: 3px solid white;
+  animation: gentlePulse 2s infinite;
+  min-width: 280px;
+}
+
+.reminder-content strong {
+  display: block;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.scroll-hint {
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+  opacity: 0.9;
+  animation: bounceArrow 1.5s ease-in-out infinite;
+}
+
+@keyframes gentlePulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.95;
+  }
+  50% {
+    transform: scale(1.02);
+    opacity: 1;
+  }
 }
 
 @keyframes pulse {
@@ -2117,6 +2190,31 @@ fieldset {
   .item-text {
     flex: 1;
     padding-right: 0.5rem;
+  }
+  
+  /* Mobile guidance styles */
+  .step-guidance {
+    margin: 0.75rem 0;
+    padding: 0.5rem;
+    font-size: 0.75rem;
+  }
+  
+  .step-guidance p {
+    font-size: 0.7rem;
+  }
+  
+  .reminder-content {
+    padding: 1rem 1.5rem;
+    min-width: 240px;
+    margin: 0 1rem;
+  }
+  
+  .reminder-content strong {
+    font-size: 1rem;
+  }
+  
+  .scroll-hint {
+    font-size: 0.8rem;
   }
   
   .binary-pair {

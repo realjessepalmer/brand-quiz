@@ -190,6 +190,12 @@ export function Question1RankWithCutoff({ question }: Question1Props) {
       <div className="question-header">
         <h2 className="question-title" dangerouslySetInnerHTML={{__html: question.text}} />
         <p className="question-instructions" dangerouslySetInnerHTML={{__html: question.instructions}} />
+        {aboveTheLine.length === 0 && (
+          <div className="step-guidance">
+            <p><strong>Step 1:</strong> Choose your values below</p>
+            <p><strong>Step 2:</strong> Rank them in order (scroll down after selecting)</p>
+          </div>
+        )}
       </div>
       
       <DndContext
@@ -273,11 +279,30 @@ export function Question1RankWithCutoff({ question }: Question1Props) {
         </button>
       </div>
 
-      {/* Bottom Scroll Indicator */}
+      {/* Enhanced Scroll Indicator */}
       {showScrollIndicator && (
-        <div className="scroll-indicator">
-          <span>Scroll down to continue</span>
-          <span className="scroll-arrow">↓</span>
+        <div className="scroll-indicator enhanced">
+          {aboveTheLine.length > 0 ? (
+            <>
+              <span>Scroll down to rank your {aboveTheLine.length} selected value{aboveTheLine.length > 1 ? 's' : ''}</span>
+              <span className="scroll-arrow">↓</span>
+            </>
+          ) : (
+            <>
+              <span>Scroll down to continue</span>
+              <span className="scroll-arrow">↓</span>
+            </>
+          )}
+        </div>
+      )}
+      
+      {/* Step 2 reminder when items selected but not visible */}
+      {aboveTheLine.length > 0 && showScrollIndicator && (
+        <div className="step2-reminder">
+          <div className="reminder-content">
+            <strong>Step 2 Ready!</strong> You have {aboveTheLine.length} value{aboveTheLine.length > 1 ? 's' : ''} to rank
+            <div className="scroll-hint">↓ Scroll down to rank and continue ↓</div>
+          </div>
         </div>
       )}
     </div>
