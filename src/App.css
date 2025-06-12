@@ -146,6 +146,7 @@
   flex: 1;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
+  position: relative;
 }
 
 /* Tablet quiz styles */
@@ -200,6 +201,7 @@
 
 .mobile-optimized {
   height: 100%;
+  overflow: hidden;
 }
 
 .mobile-optimized .question-header {
@@ -211,6 +213,7 @@
   flex: 1;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
+  min-height: 0;
 }
 
 .mobile-optimized .question-footer {
@@ -813,6 +816,11 @@
   font-size: 0.8rem;
   text-transform: uppercase;
   letter-spacing: 0.3px;
+  touch-action: manipulation;
+}
+
+.clickable-item {
+  cursor: pointer !important;
   touch-action: manipulation;
 }
 
@@ -2063,6 +2071,29 @@ fieldset {
 
 /* Mobile Optimizations for Form Controls */
 @media (max-width: 767px) {
+  /* Fix iOS scrolling issues */
+  .mobile-optimized {
+    position: relative;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  .mobile-optimized .ranking-zones {
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+    height: 100%;
+  }
+  
+  /* Two-column layout adjustments for mobile */
+  .ranking-zones.two-column {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    height: auto;
+  }
+  
+  .ranking-zones.two-column .zone {
+    min-height: 200px;
+  }
+  
   .binary-pair {
     flex-direction: column;
     gap: 0.5rem;

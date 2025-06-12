@@ -126,27 +126,8 @@ export function Question1RankWithCutoff({ question }: Question1Props) {
   };
 
   const handleDragOver = (event: DragOverEvent) => {
-    const { active, over } = event;
-    if (!over) return;
-
-    const activeId = active.id as string;
-    const overId = over.id as string;
-
-    // Check if we're dropping into a zone
-    if (overId === 'above-zone' || overId === 'below-zone') {
-      const isActiveInAbove = aboveTheLine.includes(activeId);
-      const isActiveInBelow = belowTheLine.includes(activeId);
-      
-      if (overId === 'above-zone' && isActiveInBelow) {
-        // Move from below to above
-        setBelowTheLine(prev => prev.filter(item => item !== activeId));
-        setAboveTheLine(prev => [...prev, activeId]);
-      } else if (overId === 'below-zone' && isActiveInAbove) {
-        // Move from above to below
-        setAboveTheLine(prev => prev.filter(item => item !== activeId));
-        setBelowTheLine(prev => [...prev, activeId]);
-      }
-    }
+    // Since Step 1 items are not draggable, we only handle reordering within Step 2
+    return;
   };
 
   const handleDragEnd = (event: DragEndEvent) => {
@@ -158,22 +139,15 @@ export function Question1RankWithCutoff({ question }: Question1Props) {
     const activeId = active.id as string;
     const overId = over.id as string;
 
-    // Handle reordering within the same list
+    // Only handle reordering within Step 2 (above zone)
     const activeInAbove = aboveTheLine.includes(activeId);
     const overInAbove = aboveTheLine.includes(overId);
-    const activeInBelow = belowTheLine.includes(activeId);
-    const overInBelow = belowTheLine.includes(overId);
 
     if (activeInAbove && overInAbove) {
-      // Reorder within above list
+      // Reorder within above list only
       const oldIndex = aboveTheLine.indexOf(activeId);
       const newIndex = aboveTheLine.indexOf(overId);
       setAboveTheLine(arrayMove(aboveTheLine, oldIndex, newIndex));
-    } else if (activeInBelow && overInBelow) {
-      // Reorder within below list
-      const oldIndex = belowTheLine.indexOf(activeId);
-      const newIndex = belowTheLine.indexOf(overId);
-      setBelowTheLine(arrayMove(belowTheLine, oldIndex, newIndex));
     }
   };
 
@@ -226,26 +200,25 @@ export function Question1RankWithCutoff({ question }: Question1Props) {
         modifiers={[restrictToVerticalAxis]}
       >
         <div className="ranking-zones two-column">
-          {/* Step 1: Available values zone */}
-          <DroppableZone id="below-zone">
-            <SortableContext items={belowTheLine} strategy={verticalListSortingStrategy}>
-              <div className="zone below-zone">
-                <h3 className="zone-title">Step 1: Available Values (Tap to Choose)</h3>
-                <div className="sortable-list compact-grid">
-                  {belowTheLine.map((itemText) => (
-                    <SortableItem
-                      key={itemText}
-                      id={itemText}
-                      text={itemText}
-                      onClick={handleItemClick}
-                    />
-                  ))}
-                </div>
+          {/* Step 1: Available values zone - Click only, no DnD */}
+          <div className="droppable-zone">
+            <div className="zone below-zone">
+              <h3 className="zone-title">Step 1: Available Values (Tap to Choose)</h3>
+              <div className="sortable-list compact-grid">
+                {belowTheLine.map((itemText) => (
+                  <div
+                    key={itemText}
+                    className="draggable-item clickable-item"
+                    onClick={() => handleItemClick(itemText)}
+                  >
+                    <div className="item-text">{itemText}</div>
+                  </div>
+                ))}
               </div>
-            </SortableContext>
-          </DroppableZone>
+            </div>
+          </div>
 
-          {/* Step 2: Ranking zone */}
+          {/* Step 2: Ranking zone - DnD enabled for ranking */}
           <DroppableZone id="above-zone">
             <SortableContext items={aboveTheLine} strategy={verticalListSortingStrategy}>
               <div className="zone above-zone">
