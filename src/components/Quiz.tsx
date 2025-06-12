@@ -8,6 +8,7 @@ import { Question4MultiSelect } from './questions/Question4MultiSelect';
 import { Question5NegativeSelect } from './questions/Question5NegativeSelect';
 import { Question6SingleChoice } from './questions/Question6SingleChoice';
 import { Question7DynamicMatrix } from './questions/Question7DynamicMatrix';
+import { StartScreen } from './StartScreen';
 import { ResultsDisplay } from './ResultsDisplay';
 import quizData from '../quiz-data.json';
 
@@ -49,7 +50,7 @@ const QuestionRenderer = ({ question }: { question: any }) => {
 };
 
 export function Quiz() {
-  const { state, resetQuiz, totalQuestions } = useQuiz();
+  const { state, resetQuiz, startQuiz, totalQuestions } = useQuiz();
   
   const questions = useMemo(() => quizData.quizQuestions, []);
   const currentQuestion = questions[state.currentQuestion];
@@ -65,6 +66,11 @@ export function Quiz() {
     
     scrollToTop();
   }, [state.currentQuestion, state.isComplete]);
+
+  // Show start screen if quiz hasn't been started
+  if (!state.isStarted) {
+    return <StartScreen onStart={startQuiz} />;
+  }
 
   if (state.isComplete) {
     return (

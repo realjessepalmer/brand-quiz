@@ -1,21 +1,33 @@
 import { QuizProvider } from './contexts/QuizContext';
+import { useQuiz } from './contexts/QuizContext';
 import { Quiz } from './components/Quiz';
 import './App.css'
 
-function App() {
+function AppContent() {
+  const { state } = useQuiz();
+  
   return (
     <div className="app">
-      <header className="app-header">
-        <h1>Brand Archetype Quiz</h1>
-        <p>Discover your brand's personality and connect with your audience</p>
-      </header>
+      {/* Only show header on results screen */}
+      {state.isComplete && (
+        <header className="app-header">
+          <h1>Brand Archetype Quiz</h1>
+          <p>Discover your brand's personality and connect with your audience</p>
+        </header>
+      )}
       
       <main className="app-main">
-        <QuizProvider>
-          <Quiz />
-        </QuizProvider>
+        <Quiz />
       </main>
     </div>
+  );
+}
+
+function App() {
+  return (
+    <QuizProvider>
+      <AppContent />
+    </QuizProvider>
   );
 }
 

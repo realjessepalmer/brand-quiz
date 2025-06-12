@@ -6,6 +6,7 @@ import quizData from '../quiz-data.json';
 interface QuizContextType {
   state: QuizState;
   totalQuestions: number;
+  startQuiz: () => void;
   nextQuestion: () => void;
   previousQuestion: () => void;
   goToQuestion: (questionIndex: number) => void;
@@ -19,6 +20,7 @@ interface QuizContextType {
 const QuizContext = createContext<QuizContextType | undefined>(undefined);
 
 type QuizAction = 
+  | { type: 'START_QUIZ' }
   | { type: 'NEXT_QUESTION' }
   | { type: 'PREVIOUS_QUESTION' }
   | { type: 'SET_ANSWER'; payload: QuizAnswer }
@@ -27,6 +29,7 @@ type QuizAction =
   | { type: 'GO_TO_QUESTION'; payload: number };
 
 const initialState: QuizState = {
+  isStarted: false,
   currentQuestion: 0,
   answers: [],
   scores: {},
@@ -36,6 +39,11 @@ const initialState: QuizState = {
 
 function quizReducer(state: QuizState, action: QuizAction): QuizState {
   switch (action.type) {
+    case 'START_QUIZ':
+      return {
+        ...state,
+        isStarted: true,
+      };
     case 'NEXT_QUESTION':
       return {
         ...state,
@@ -88,6 +96,10 @@ export function QuizProvider({ children }: { children: ReactNode }) {
   const canGoNext = state.currentQuestion < totalQuestions - 1;
   const canGoPrevious = state.currentQuestion > 0;
 
+  const startQuiz = () => {
+    dispatch({ type: 'START_QUIZ' });
+  };
+
   const nextQuestion = () => {
     if (state.currentQuestion + 1 >= totalQuestions) {
       const results = scorer.calculateResults(state.answers);
@@ -121,6 +133,7 @@ export function QuizProvider({ children }: { children: ReactNode }) {
   const contextValue = useMemo(() => ({
     state,
     totalQuestions,
+    startQuiz,
     nextQuestion,
     previousQuestion,
     goToQuestion,

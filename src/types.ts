@@ -77,6 +77,7 @@ export interface ArchetypeResult {
 }
 
 export interface QuizState {
+  isStarted: boolean;
   currentQuestion: number;
   answers: QuizAnswer[];
   scores: Record<string, number>;

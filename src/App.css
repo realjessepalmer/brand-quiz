@@ -16,26 +16,27 @@
 }
 
 .app-header {
-  padding: 1rem;
+  padding: 0.75rem 1rem;
   text-align: center;
   color: #272727;
   border-bottom: 1px solid #272727;
 }
 
 .app-header h1 {
-  margin: 0 0 0.5rem 0;
-  font-size: 1.5rem;
+  margin: 0 0 0.25rem 0;
+  font-size: 1.3rem;
   font-weight: 400;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 0.8px;
   color: #272727;
+  line-height: 1.1;
 }
 
 .app-header p {
   margin: 0;
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.4px;
   color: #323434;
 }
 
@@ -49,21 +50,47 @@
   overflow: hidden;
 }
 
-/* Desktop styles */
-@media (min-width: 768px) {
+/* Tablet styles (iPad) */
+@media (min-width: 768px) and (max-width: 1024px) {
   .app-header {
-    padding: 2rem;
+    padding: 1rem 1.5rem;
   }
   
   .app-header h1 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-    letter-spacing: 2px;
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+    letter-spacing: 1.2px;
   }
   
   .app-header p {
-    font-size: 1rem;
-    letter-spacing: 1px;
+    font-size: 0.8rem;
+    letter-spacing: 0.6px;
+  }
+  
+  .app-main {
+    padding: 1rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+}
+
+/* Desktop styles */
+@media (min-width: 1025px) {
+  .app-header {
+    padding: 1.5rem 2rem;
+  }
+  
+  .app-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.75rem;
+    letter-spacing: 1.8px;
+  }
+  
+  .app-header p {
+    font-size: 0.9rem;
+    letter-spacing: 0.8px;
   }
   
   .app-main {
@@ -87,7 +114,7 @@
 }
 
 .quiz-header {
-  padding: 0.75rem;
+  padding: 0.5rem 0.75rem;
   border-bottom: 1px solid #272727;
 }
 
@@ -121,10 +148,31 @@
   -webkit-overflow-scrolling: touch;
 }
 
-/* Desktop quiz styles */
-@media (min-width: 768px) {
+/* Tablet quiz styles */
+@media (min-width: 768px) and (max-width: 1024px) {
   .quiz-header {
-    padding: 2rem;
+    padding: 0.75rem 1.5rem;
+  }
+  
+  .progress-bar {
+    height: 4px;
+    margin-bottom: 0.75rem;
+  }
+  
+  .progress-text {
+    font-size: 0.75rem;
+    letter-spacing: 0.8px;
+  }
+  
+  .quiz-content {
+    padding: 1rem 1.5rem;
+  }
+}
+
+/* Desktop quiz styles */
+@media (min-width: 1025px) {
+  .quiz-header {
+    padding: 1rem 2rem;
   }
   
   .progress-bar {
@@ -138,7 +186,7 @@
   }
   
   .quiz-content {
-    padding: 2rem;
+    padding: 1.5rem 2rem;
   }
 }
 
@@ -271,8 +319,38 @@
   }
 }
 
+/* Tablet question styles */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .mobile-optimized .question-header {
+    margin-bottom: 1.5rem;
+  }
+  
+  .question-title {
+    font-size: 1.6rem;
+    margin-bottom: 1.2rem;
+    letter-spacing: 0.8px;
+  }
+  
+  .question-instructions {
+    font-size: 0.85rem;
+    margin-bottom: 0.75rem;
+    letter-spacing: 0.4px;
+  }
+  
+  .interaction-help {
+    font-size: 0.8rem;
+    margin-bottom: 1.5rem;
+    padding: 0.75rem;
+  }
+  
+  .question-footer {
+    margin-top: 2.5rem;
+    padding: 1.25rem 0;
+  }
+}
+
 /* Desktop question styles */
-@media (min-width: 768px) {
+@media (min-width: 1025px) {
   .mobile-optimized .question-header {
     margin-bottom: 2rem;
   }
@@ -345,8 +423,20 @@
   color: white;
 }
 
+/* Tablet button styles */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .btn-primary, .btn-secondary {
+    padding: 14px 28px;
+    font-size: 0.85rem;
+    letter-spacing: 0.8px;
+    margin: 0 0.4rem;
+    width: auto;
+    min-height: 48px;
+  }
+}
+
 /* Desktop button styles */
-@media (min-width: 768px) {
+@media (min-width: 1025px) {
   .btn-primary, .btn-secondary {
     padding: 16px 32px;
     font-size: 0.9rem;
@@ -448,7 +538,38 @@
   line-height: 1.2;
 }
 
-@media (min-width: 768px) {
+/* Tablet styles for ranking zones */
+@media (min-width: 768px) and (max-width: 1024px) {
+  /* Step 1 tablet styles - touch friendly */
+  .ranking-zones.two-column .droppable-zone:first-child .draggable-item {
+    padding: 14px 18px;
+    gap: 0.9rem;
+    font-size: 0.85rem;
+    min-height: 48px;
+  }
+  
+  .ranking-zones.two-column .droppable-zone:first-child .rank-number {
+    width: 26px;
+    height: 26px;
+    font-size: 0.75rem;
+  }
+  
+  /* Step 2 tablet styles */
+  .ranking-zones.two-column .droppable-zone:last-child .draggable-item {
+    padding: 12px 16px;
+    gap: 0.7rem;
+    font-size: 0.8rem;
+    min-height: 44px;
+  }
+  
+  .ranking-zones.two-column .droppable-zone:last-child .rank-number {
+    width: 22px;
+    height: 22px;
+    font-size: 0.65rem;
+  }
+}
+
+@media (min-width: 1025px) {
   /* Step 1 desktop styles */
   .ranking-zones.two-column .droppable-zone:first-child .draggable-item {
     padding: 16px 20px;
@@ -506,8 +627,21 @@
   border: 1px solid #272727 !important;
 }
 
+/* Tablet sticky positioning */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .question-footer.sticky {
+    bottom: 1.5rem;
+    right: 1.5rem;
+  }
+  
+  .question-footer.sticky .btn-primary {
+    min-width: 140px;
+    padding: 14px 20px;
+  }
+}
+
 /* Desktop sticky positioning */
-@media (min-width: 768px) {
+@media (min-width: 1025px) {
   .question-footer.sticky {
     bottom: 2rem;
     right: 2rem;
@@ -764,8 +898,72 @@
   letter-spacing: 0.5px;
 }
 
+/* Tablet drag and drop styles */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .ranking-zones {
+    gap: 1.5rem;
+  }
+  
+  .sortable-list {
+    gap: 1rem;
+    min-height: 2.5rem;
+  }
+  
+  .zone {
+    min-height: 100px;
+    padding: 1.25rem;
+  }
+  
+  /* Better tablet proportions for two-column */
+  .ranking-zones.two-column .zone {
+    min-height: 350px;
+    height: auto;
+  }
+  
+  .zone-title {
+    margin-bottom: 1.25rem;
+    font-size: 0.85rem;
+    letter-spacing: 0.8px;
+  }
+  
+  .draggable-item {
+    padding: 14px 18px;
+    gap: 0.9rem;
+    font-size: 0.85rem;
+    letter-spacing: 0.4px;
+    min-height: 48px;
+  }
+  
+  .rank-number {
+    width: 26px;
+    height: 26px;
+    font-size: 0.75rem;
+  }
+  
+  .empty-zone {
+    padding: 2.5rem;
+    font-size: 0.85rem;
+    letter-spacing: 0.4px;
+  }
+  
+  .drag-dots {
+    font-size: 1.1rem;
+  }
+  
+  .cutoff-divider {
+    margin: 2.5rem 0;
+  }
+  
+  .cutoff-label {
+    top: -11px;
+    padding: 0 16px;
+    font-size: 0.75rem;
+    letter-spacing: 0.8px;
+  }
+}
+
 /* Desktop drag and drop styles */
-@media (min-width: 768px) {
+@media (min-width: 1025px) {
   .ranking-zones {
     gap: 2rem;
   }
@@ -1236,8 +1434,49 @@ fieldset {
   font-weight: 500;
 }
 
+/* Tablet matrix styles */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .scale-labels {
+    font-size: 0.85rem;
+    margin-bottom: 1.25rem;
+  }
+  
+  .matrix-container {
+    gap: 0.9rem;
+  }
+  
+  .matrix-row {
+    gap: 0.9rem;
+    padding: 1.25rem;
+    border-radius: 6px;
+  }
+  
+  .trait-label {
+    font-size: 0.95rem;
+  }
+  
+  .rating-scale {
+    gap: 0.45rem;
+  }
+  
+  .scale-button {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .completion-indicator {
+    font-size: 0.85rem;
+    margin-top: 1.25rem;
+  }
+}
+
 /* Desktop matrix styles */
-@media (min-width: 768px) {
+@media (min-width: 1025px) {
   .scale-labels {
     font-size: 0.9rem;
     margin-bottom: 1.5rem;
@@ -1274,6 +1513,199 @@ fieldset {
   .completion-indicator {
     font-size: 0.9rem;
     margin-top: 1.5rem;
+  }
+}
+
+/* Start Screen Styles - Mobile First */
+.start-screen {
+  background: white;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.start-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.start-header {
+  text-align: center;
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #272727;
+}
+
+.start-header h1 {
+  margin: 0 0 1rem 0;
+  font-size: 2rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #272727;
+  line-height: 1.2;
+}
+
+.start-header p {
+  margin: 0;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: #323434;
+}
+
+.start-instructions {
+  flex: 1;
+  margin-bottom: 2rem;
+}
+
+.start-instructions h2 {
+  margin: 0 0 1rem 0;
+  font-size: 1.2rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #272727;
+}
+
+.start-instructions p {
+  margin: 0 0 1.5rem 0;
+  line-height: 1.6;
+  color: #323434;
+  font-size: 0.95rem;
+}
+
+.start-instructions ul {
+  margin: 0 0 2rem 0;
+  padding-left: 1.5rem;
+  color: #323434;
+}
+
+.start-instructions li {
+  margin-bottom: 0.5rem;
+  line-height: 1.5;
+  font-size: 0.9rem;
+}
+
+.start-instructions strong {
+  color: #272727;
+  font-weight: 500;
+}
+
+.time-estimate {
+  background: #F7F3F3;
+  border: 1px solid #FE6762;
+  padding: 1rem;
+  margin-top: 1.5rem;
+  text-align: center;
+}
+
+.time-estimate p {
+  margin: 0;
+  color: #272727;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.start-actions {
+  text-align: center;
+  padding-top: 1rem;
+}
+
+.start-button {
+  font-size: 1rem;
+  padding: 16px 32px;
+  min-width: 200px;
+  background: #272727;
+  color: white;
+  border: 1px solid #272727;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: 'Helvetica', Arial, sans-serif;
+  font-weight: 400;
+}
+
+.start-button:hover {
+  background: #FE6762;
+  border-color: #FE6762;
+}
+
+/* Tablet start screen styles */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .start-content {
+    padding: 3rem 2rem;
+  }
+  
+  .start-header h1 {
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+  }
+  
+  .start-header p {
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+  }
+  
+  .start-instructions h2 {
+    font-size: 1.4rem;
+  }
+  
+  .start-instructions p {
+    font-size: 1rem;
+  }
+  
+  .start-instructions li {
+    font-size: 0.95rem;
+  }
+  
+  .start-button {
+    font-size: 1.1rem;
+    padding: 18px 36px;
+    min-width: 220px;
+  }
+}
+
+/* Desktop start screen styles */
+@media (min-width: 1025px) {
+  .start-content {
+    padding: 4rem 3rem;
+  }
+  
+  .start-header h1 {
+    font-size: 3rem;
+    letter-spacing: 2.5px;
+  }
+  
+  .start-header p {
+    font-size: 1.2rem;
+    letter-spacing: 1.2px;
+  }
+  
+  .start-instructions h2 {
+    font-size: 1.5rem;
+  }
+  
+  .start-instructions p {
+    font-size: 1.1rem;
+  }
+  
+  .start-instructions li {
+    font-size: 1rem;
+  }
+  
+  .start-button {
+    font-size: 1.2rem;
+    padding: 20px 40px;
+    min-width: 250px;
   }
 }
 
@@ -1435,8 +1867,105 @@ fieldset {
   gap: 0.75rem;
 }
 
+/* Tablet results styles */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .results-container {
+    max-height: calc(100vh - 3.5rem);
+    border: 1px solid #272727;
+  }
+  
+  .results-header {
+    padding: 1.5rem;
+  }
+  
+  .results-title {
+    font-size: 2rem;
+    margin-bottom: 1.25rem;
+    letter-spacing: 1.5px;
+  }
+  
+  .results-summary {
+    gap: 0.75rem;
+  }
+  
+  .result-pill {
+    padding: 0.6rem 0.85rem;
+    font-size: 0.9rem;
+  }
+  
+  .percentage {
+    font-size: 0.8rem;
+    padding: 0.2rem 0.4rem;
+  }
+  
+  .results-content {
+    padding: 1.5rem;
+    overflow-y: auto;
+  }
+  
+  .archetype-details {
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .archetype-card {
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .archetype-header {
+    padding: 1.25rem;
+  }
+  
+  .archetype-header .archetype-name {
+    font-size: 1.3rem;
+  }
+  
+  .archetype-strength {
+    font-size: 0.9rem;
+  }
+  
+  .archetype-content {
+    padding: 1.25rem;
+  }
+  
+  .archetype-description {
+    font-size: 0.95rem;
+    margin-bottom: 1.25rem;
+  }
+  
+  .archetype-traits,
+  .archetype-examples {
+    margin-bottom: 1.25rem;
+  }
+  
+  .archetype-traits h3,
+  .archetype-examples h3 {
+    font-size: 1rem;
+    margin-bottom: 0.6rem;
+  }
+  
+  .traits-list,
+  .examples-list {
+    gap: 0.45rem;
+  }
+  
+  .trait-tag,
+  .example-tag {
+    padding: 0.22rem 0.65rem;
+    font-size: 0.8rem;
+  }
+  
+  .results-actions {
+    padding: 1.5rem;
+    flex-direction: row;
+    justify-content: center;
+    gap: 0.75rem;
+  }
+}
+
 /* Desktop results styles */
-@media (min-width: 768px) {
+@media (min-width: 1025px) {
   .results-container {
     max-height: calc(100vh - 4rem);
     border: 1px solid #272727;
@@ -1588,5 +2117,38 @@ fieldset {
   
   .rating-scale {
     justify-content: center;
+  }
+}
+
+/* Tablet Optimizations for Form Controls */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .binary-option {
+    padding: 1.25rem;
+    font-size: 0.85rem;
+  }
+  
+  .choice-option,
+  .checkbox-option,
+  .transformation-option {
+    padding: 1.25rem;
+    gap: 1.25rem;
+    font-size: 0.85rem;
+  }
+  
+  .radio-indicator,
+  .checkbox-indicator {
+    width: 26px;
+    height: 26px;
+    min-width: 26px;
+    min-height: 26px;
+  }
+  
+  .radio-dot {
+    width: 8px;
+    height: 8px;
+  }
+  
+  .checkbox-check {
+    font-size: 0.8rem;
   }
 }
